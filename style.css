@@ -36,6 +36,10 @@ nav ul {
     grid-template-rows: repeat(3, 10vw);
     grid-template-columns: repeat(3, 10vw);
     font-family: 'Reenie Beanie', cursive;
+    position: relative;
+}
+.container.disabled {
+  pointer-events: none;
 }
 
 .box {
@@ -54,9 +58,11 @@ nav ul {
 
 .boxText {
     font-size: 8vw;
+    color: white;
 }
 
 .gameInfo {
+    margin: 14px;
     padding: 0 43px;
     font-family: 'Gochi Hand', cursive;
 }
@@ -71,15 +77,23 @@ nav ul {
     justify-content: center;
     align-items: center;
     padding: 2vw;
+    max-width: 50vh;
 }
 
 .info {
     font-size: 22px;
-    padding: 2vw;
+    padding: 1vw;
+}
+
+.imgbox{
+    display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .imgbox img {
-    display: none;
+    width: 0;
+    transition: width 1s ease-in-out;
 }
 
 #reset {
@@ -101,6 +115,14 @@ nav ul {
     transform: scale(1.1S);
 }
 
+.line{
+    height: 3px;
+    width: 0;
+    position: absolute;
+    background-color: #ffdb00;
+    transition: width 1s ease-in-out;
+}
+
 .br-0 {
     border-right: 0;
 }
@@ -115,4 +137,21 @@ nav ul {
 
 .bb-0 {
     border-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+    .gameInfo h1{
+        margin: 34px;
+        font-size: 1.8rem;
+    }
+    .container { 
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
 }
